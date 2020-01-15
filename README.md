@@ -142,7 +142,8 @@ mws.request(submitFeed)
 
 ```
 
-### Handling Errors:
+### Handling Errors
+
 ``` javascript
 const query = {
     path: '/Test/TestErrorCall',
@@ -186,7 +187,8 @@ There is a small set of mocha tests in test/test.js.  Any changes that you make,
 tests to ensure that everything still works.  As the tests actually hit the Amazon MWS servers, you
 need to supply your authorization credentials to the tests.  You can place them in test/keys.json,
 like
-````
+
+````javascript
 {
     "accessKeyId": "AKIA....",
     "secretAccessKey": "POF...",
