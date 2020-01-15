@@ -3,3 +3,11 @@ test/*
 src/*
 feed.js
 test-report.js
+!lib/*
+*.map
+.nycrc
+logs
+coverage
+.eslintrc.json
+.nyc_output
+.travis.yml
