@@ -5,7 +5,7 @@ import request, {
     UrlOptions,
 } from 'request';
 import { IncomingHttpHeaders } from 'http';
-import { DebugOptions } from './types/MWSSimple.d';
+import { DebugOptions } from './mws-simple';
 
 import syncWriteToFile from './syncWriteToFile';
 import ServerError from './ServerError';

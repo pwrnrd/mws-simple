@@ -1,12 +1,27 @@
 import { IncomingHttpHeaders } from 'http';
 import crypto from 'crypto';
-import { ConstructorParams, DebugOptions } from './types/MWSSimple.d';
 import ServerError from './ServerError';
 import makeRequest from './makeRequest';
 import makeSignature from './makeSignature';
 import getContentType from './getContentType';
 
 const { name: pkgAppId, version: pkgAppVersionId } = require('../package.json');
+
+export interface ConstructorParams {
+    appId?: string,
+    appVersionId?: string,
+    host?: string,
+    port?: number,
+    accessKeyId?: string,
+    secretAccessKey?: string,
+    merchantId?: string,
+    authToken?: string,
+}
+
+export interface DebugOptions {
+    rawFile?: string,
+    parsedFile?: string,
+}
 
 class MWSSimple {
     accessKeyId: string = '';

@@ -1,5 +1,6 @@
-[![codebeat badge](https://codebeat.co/badges/8645439c-2be6-4c45-acca-aaf6ac449531)](https://codebeat.co/projects/github-com-ericblade-mws-simple-master)
 # mws-simple
+
+**[![codebeat badge](https://codebeat.co/badges/8645439c-2be6-4c45-acca-aaf6ac449531)](https://codebeat.co/projects/github-com-ericblade-mws-simple-master)**
 
 [![Join the chat at https://gitter.im/mws-advanced/Lobby](https://badges.gitter.im/mws-advanced/Lobby.svg)](https://gitter.im/mws-advanced/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -8,7 +9,7 @@ nodejs Amazon MWS API in (about) 250 lines of code
 Which means that you will have to do more work in order to make api calls but gives you the most control.  Response uses xml2js or csv-parse for conversion.
 
 If you are looking to do something with MWS, but not involve yourself in all the raw data handling,
-you may want to have a look at mws-advanced: http://www.github.com/ericblade/mws-advanced
+you may want to have a look at [mws-advanced](http://www.github.com/ericblade/mws-advanced)
 
 Defaults to US marketplace settings, but can code to override default
 
@@ -21,7 +22,7 @@ npm install @ericblade/mws-simple
 
 ## Usage
 
-###### Initialize
+### Initialize
 
 ``` javascript
 let mws = require('mws-simple')({
@@ -31,7 +32,7 @@ let mws = require('mws-simple')({
 });
 ```
 
-###### Build a request object containing `query` and optionally `path`, `headers`, and `feedContent`
+### Build a request object containing `query` and optionally `path`, `headers`, and `feedContent`
 
 Of the [required parameters](http://docs.developer.amazonservices.com/en_US/dev_guide/DG_RequiredRequestParameters.html), `AWSAccessKeyId`, `SellerId`, `Signature`, `SignatureMethod`,  `SignatureVersion`, and `Timestamp` will be taken care of but most can be overridden.  This leaves `Action`, `MWSAuthToken` (for web applications and third-party developer authorizations only), and `Version` required to be populated.
 
@@ -41,8 +42,9 @@ If the API has an endpoint as specified in the documentation, put the endpoint i
 
 For uploading data to MWS, populate `feedContent` with a `buffer` of data.
 
-###### Invoke `request` with your request object
-###### [Callback]
+#### Invoke `request` with your request object
+
+##### [Callback]
 
 ````
 mws.request(requestObj, function (err, {res, headers}) {
@@ -50,7 +52,7 @@ mws.request(requestObj, function (err, {res, headers}) {
 });
 ````
 
-###### [Promise]
+##### [Promise]
 ````
 mws.request(requestObj)
   .then(({result, headers}) => {
@@ -61,7 +63,7 @@ mws.request(requestObj)
   });
 ````
 
-###### Check your error, response, and headers
+##### Check your error, response, and headers
 
 Note that there are two arguments that should be used for the callback:
 
@@ -81,7 +83,8 @@ the names to all lower-case, so x-mws-quota-resetsOn is actually x-mws-quota-res
 
 ## Examples
 
-### List Orders (open and created in last 24 hours):
+### List Orders (open and created in last 24 hours)
+
 ``` javascript
 let date = new Date();
 date.setDate(date.getDate() - 1);
@@ -113,7 +116,8 @@ mws.request(listOrders)
   });
 ```
 
-### Submit Shipments File:
+### Submit Shipments File
+
 ``` javascript
 let submitFeed = {
   feedContent: require('fs').readFileSync('amazon-shipments.tab'),

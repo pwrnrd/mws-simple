@@ -1,6 +1,10 @@
 import { parseString as xmlParser } from 'xml2js';
 import tabParser from 'csv-parse';
-import { ResultsObj } from './types/MWSSimple.d';
+
+export interface ResultsObj {
+    contentType: string,
+    body: string,
+}
 
 const processXmlRequest = (
     body: string,
