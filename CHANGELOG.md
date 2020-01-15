@@ -1,3 +1,10 @@
+## [5.0.2](https://github.com/ericblade/mws-simple/compare/5.0.1...5.0.2) (2020-01-15)
+
+
+### Bug Fixes
+
+* eliminate MWSSimple.d.ts as dependent packages couldn't access it ([d9d5e9c](https://github.com/ericblade/mws-simple/commit/d9d5e9cac12f4e05f139fa81344482d579704923))
+
 ## [5.0.1](https://github.com/ericblade/mws-simple/compare/5.0.0...5.0.1) (2020-01-15)
 
 # [5.0.0](https://github.com/ericblade/mws-simple/compare/4.2.0...5.0.0) (2020-01-15)
