@@ -2,7 +2,7 @@
   "name": "@ericblade/mws-simple",
   "version": "5.0.3",
   "description": "Modern, full featured nodejs Amazon MWS API in ~150 lines of code",
-  "main": "lib/mws-simple.js",
+  "main": "lib/mws-simple.ts",
   "dependencies": {
     "csv-parse": "^4.8.5",
     "query-string": "^6.9.0",
